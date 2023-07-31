@@ -5,15 +5,19 @@ import {
   incrementCookieCounter,
   incrementFileCounter,
 } from "./_action";
+import { cookies } from "next/headers";
 
 export default async function Page() {
   const cookieCounter = await getCookieCounter();
   const fileCounter = await getFileCounter();
+  const session = cookies().get("session")?.value;
+
   return (
     <main>
       <h1>Path: / (home) </h1>
       <h1>
-        File Counter = {fileCounter} | cookie Counter = {cookieCounter}
+        File Counter = {fileCounter} | cookie Counter = {cookieCounter} |
+        session = {session}
       </h1>
 
       <form>
@@ -27,11 +31,6 @@ export default async function Page() {
           Increment file counter (uses revalidatePath)
         </button>
       </form>
-
-      <br />
-      <Link href={"/target"}>Go to `/target`</Link>
-      <br />
-      <Link href={"/working"}>Go to `/working`</Link>
     </main>
   );
 }

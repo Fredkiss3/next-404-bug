@@ -11,7 +11,6 @@ export default async function Page() {
         File Counter = {fileCounter} | cookie Counter = {cookieCounter}
       </h1>
       <br />
-      <Link href={"/"}>Go home</Link>
     </main>
   );
 }

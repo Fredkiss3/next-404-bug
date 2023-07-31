@@ -28,7 +28,6 @@ export default async function Page() {
       </form>
 
       <br />
-      <Link href={"/target"}>Go to `/target`</Link>
     </main>
   );
 }

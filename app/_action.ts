@@ -1,5 +1,6 @@
 "use server";
 import { revalidatePath } from "next/cache";
+import { RedirectType } from "next/dist/client/components/redirect";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import fs from "node:fs/promises";
@@ -44,6 +45,6 @@ export async function incrementFileCounter(fd: FormData) {
 
   revalidatePath("/");
   if (fd.get("_redirect")) {
-    redirect("/target");
+    redirect("/target", RedirectType.push);
   }
 }
