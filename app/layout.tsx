@@ -25,12 +25,6 @@ export default async function RootLayout({
         <Link href={"/"}>Go home</Link>
         <br />
         <Link href={"/target"}>Go to `/target`</Link>
-        <br />
-        <Link href={"/working"}>Go to `/working`</Link>
-        <br />
-        <Link href={"/not-found"}>Go to `/not-found`</Link>
-        <br />
-        <Link href={"/set-cookie"}>Go to `/set-cookie`</Link>
       </body>
     </html>
   );
