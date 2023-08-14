@@ -1,5 +1,4 @@
 import * as React from "react";
-import { getCookieCounter } from "./_action";
 import Link from "next/link";
 
 export const metadata = {
@@ -12,13 +11,11 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const cookieCounter = await getCookieCounter();
-
   return (
     <html>
       <head />
       <body>
-        <h2>ROOT LAYOUT (cookie = {cookieCounter})</h2>
+        <h2>ROOT LAYOUT (Date = {Date.now()})</h2>
         {children}
 
         <br />

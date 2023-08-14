@@ -1,23 +1,20 @@
-import { getCookieCounter, incrementCookieCounter } from "./_action";
+import { redirectAction } from "./_action";
 
 export default async function Page() {
-  const cookieCounter = await getCookieCounter();
-
   return (
     <main>
       <h1>Path: / (home) </h1>
-      <h1>cookie Counter = {cookieCounter}</h1>
 
-      <form action={incrementCookieCounter}>
+      <form action={redirectAction}>
         <input type="hidden" name="_redirect" value={"/"} />
-        <button>Increment cookie counter</button>
+        <button>Redirect To / </button>
         <br />
         <br />
       </form>
 
-      <form action={incrementCookieCounter}>
+      <form action={redirectAction}>
         <input type="hidden" name="_redirect" value={"/target"} />
-        <button>Increment cookie counter (Redirects to target)</button>
+        <button>Redirect To /target </button>
         <br />
         <br />
       </form>
